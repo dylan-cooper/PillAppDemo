@@ -15,6 +15,8 @@ class ScheduleViewController: UIViewController {
     private var originalDistance:CGFloat = 32
     @IBOutlet weak var contentView: UIView!
     
+    var medications = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

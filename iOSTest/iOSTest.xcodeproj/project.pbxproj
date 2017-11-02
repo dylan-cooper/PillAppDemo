@@ -21,6 +21,8 @@
 		A5117DF71F91C5E90002A8DB /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5117DF61F91C5E90002A8DB /* XibView.swift */; };
 		A5117DF91F91C7620002A8DB /* ReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5117DF81F91C7620002A8DB /* ReusableView.xib */; };
 		A5117DFB1F91C8920002A8DB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5117DFA1F91C8920002A8DB /* ReusableView.swift */; };
+		A5577A9D1FAADA2900E75938 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5577A9B1FAADA2900E75938 /* Schedule.storyboard */; };
+		A5577A9F1FAADBB900E75938 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */; };
 		A570D5F91F9D5AE5005DBCF6 /* TabController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A570D5F71F9D5AE5005DBCF6 /* TabController.storyboard */; };
 		A570D5FB1F9D5B72005DBCF6 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */; };
 		A570D5FD1F9D6233005DBCF6 /* AccountAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */; };
@@ -66,6 +68,8 @@
 		A5117DF61F91C5E90002A8DB /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		A5117DF81F91C7620002A8DB /* ReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableView.xib; sourceTree = "<group>"; };
 		A5117DFA1F91C8920002A8DB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		A5577A9C1FAADA2900E75938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iOSTest/iOSTest/Base.lproj/Schedule.storyboard; sourceTree = "<group>"; };
+		A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		A570D5F81F9D5AE5005DBCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iOSTest/Base.lproj/TabController.storyboard; sourceTree = "<group>"; };
 		A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
 		A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */,
 				A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */,
 				18DF990E1FA784A300FAC28F /* AddMedicationTableViewController.swift */,
+				A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */,
 				18DF99121FA8D08C00FAC28F /* MedicationEndRepeatTableViewController.swift */,
 				A570D6001F9E4D55005DBCF6 /* UITextField+DoneButton.swift */,
 				A5117DF61F91C5E90002A8DB /* XibView.swift */,
@@ -137,6 +142,7 @@
 				A5117DCF1F91C5740002A8DB /* Assets.xcassets */,
 				A5117DCC1F91C5740002A8DB /* Main.storyboard */,
 				A570D5F71F9D5AE5005DBCF6 /* TabController.storyboard */,
+				A5577A9B1FAADA2900E75938 /* Schedule.storyboard */,
 				A5117DD11F91C5740002A8DB /* LaunchScreen.storyboard */,
 				A5117DD41F91C5740002A8DB /* Info.plist */,
 			);
@@ -273,6 +279,7 @@
 				A5117DD01F91C5740002A8DB /* Assets.xcassets in Resources */,
 				A5117DCE1F91C5740002A8DB /* Main.storyboard in Resources */,
 				A5117DF91F91C7620002A8DB /* ReusableView.xib in Resources */,
+				A5577A9D1FAADA2900E75938 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +312,7 @@
 				18B6210B1F9EAB3A00DA7627 /* ScheduleViewController.swift in Sources */,
 				A5117DF71F91C5E90002A8DB /* XibView.swift in Sources */,
 				18DF99131FA8D08C00FAC28F /* MedicationEndRepeatTableViewController.swift in Sources */,
+				A5577A9F1FAADBB900E75938 /* ProfileTableViewController.swift in Sources */,
 				A570D5FB1F9D5B72005DBCF6 /* UIView+Corners.swift in Sources */,
 				A5117DC91F91C5740002A8DB /* AppDelegate.swift in Sources */,
 				A5117DFB1F91C8920002A8DB /* ReusableView.swift in Sources */,
@@ -358,6 +366,14 @@
 				A5117DD21F91C5740002A8DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5577A9B1FAADA2900E75938 /* Schedule.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5577A9C1FAADA2900E75938 /* Base */,
+			);
+			name = Schedule.storyboard;
 			sourceTree = "<group>";
 		};
 		A570D5F71F9D5AE5005DBCF6 /* TabController.storyboard */ = {
