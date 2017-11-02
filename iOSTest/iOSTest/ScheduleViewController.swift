@@ -24,7 +24,7 @@ class ScheduleViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     @IBAction func unwindToSchedule(_ sender: UIStoryboardSegue) {
         
     }

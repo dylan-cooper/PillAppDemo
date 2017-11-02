@@ -25,6 +25,7 @@
 		A5577A9F1FAADBB900E75938 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */; };
 		A5577AA11FAB9F1900E75938 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5577AA01FAB9F1900E75938 /* SettingsTableViewController.swift */; };
 		A5577AA31FABBA0000E75938 /* LanguageSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5577AA21FABBA0000E75938 /* LanguageSettingsTableViewController.swift */; };
+		A5577AA51FABCBE300E75938 /* ScheduleContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5577AA41FABCBE300E75938 /* ScheduleContainerViewController.swift */; };
 		A570D5F91F9D5AE5005DBCF6 /* TabController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A570D5F71F9D5AE5005DBCF6 /* TabController.storyboard */; };
 		A570D5FB1F9D5B72005DBCF6 /* UIView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */; };
 		A570D5FD1F9D6233005DBCF6 /* AccountAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */; };
@@ -74,6 +75,7 @@
 		A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		A5577AA01FAB9F1900E75938 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A5577AA21FABBA0000E75938 /* LanguageSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsTableViewController.swift; sourceTree = "<group>"; };
+		A5577AA41FABCBE300E75938 /* ScheduleContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleContainerViewController.swift; sourceTree = "<group>"; };
 		A570D5F81F9D5AE5005DBCF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iOSTest/Base.lproj/TabController.storyboard; sourceTree = "<group>"; };
 		A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corners.swift"; sourceTree = "<group>"; };
 		A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				18B621081F9E6FAC00DA7627 /* UnderlinedTextField.swift */,
 				A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */,
 				18B6210A1F9EAB3A00DA7627 /* ScheduleViewController.swift */,
+				A5577AA41FABCBE300E75938 /* ScheduleContainerViewController.swift */,
 				A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */,
 				A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */,
 				18DF990E1FA784A300FAC28F /* AddMedicationTableViewController.swift */,
@@ -325,6 +328,7 @@
 				A5117DC91F91C5740002A8DB /* AppDelegate.swift in Sources */,
 				A5117DFB1F91C8920002A8DB /* ReusableView.swift in Sources */,
 				18B621091F9E6FAC00DA7627 /* UnderlinedTextField.swift in Sources */,
+				A5577AA51FABCBE300E75938 /* ScheduleContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

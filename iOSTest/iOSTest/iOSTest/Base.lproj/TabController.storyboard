@@ -437,14 +437,6 @@
             </objects>
             <point key="canvasLocation" x="503" y="543"/>
         </scene>
-        <!--SuccessViewController-->
-        <scene sceneID="nK4-4a-Tyx">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SuccessViewController" storyboardName="Schedule" referencedIdentifier="SuccessViewController" id="6TB-RI-fIc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CsW-cv-Uti" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="216" y="1942"/>
-        </scene>
         <!--Friends-->
         <scene sceneID="0A8-SS-WWp">
             <objects>
