@@ -17,6 +17,7 @@ class AddMedicationTableViewController: UITableViewController {
     var startDateCellHeight:CGFloat = 0
     var endRepeatCellHeight:CGFloat = 0
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     var endDate:Date? = nil {
         didSet {
             if let date = endDate {
@@ -42,6 +43,15 @@ class AddMedicationTableViewController: UITableViewController {
     }
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didEditTitle(_ sender: UITextField) {
+        if sender.hasText {
+            addButton.isEnabled = true
+        } else {
+            addButton.isEnabled = false
+        }
     }
     
     @IBAction func didSelectDate(_ sender: UIDatePicker) {

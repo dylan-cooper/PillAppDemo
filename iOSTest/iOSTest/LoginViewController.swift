@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     deinit {
-        print("goodbye")
+        print("Goodbye to log in")
     }
 
     override func didReceiveMemoryWarning() {
