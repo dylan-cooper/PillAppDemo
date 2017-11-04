@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ProfileTableViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var headerImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,28 @@ class ProfileTableViewController: UITableViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        headerImage.layer.cornerRadius = headerImage.frame.width/2
-        headerImage.layer.masksToBounds = true
+        imageContainer.layer.cornerRadius = imageContainer.frame.width/2
+        imageContainer.layer.masksToBounds = true
     }
     
+    @IBAction func didTapEditPictureButton(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = false
+        picker.sourceType = .camera
+        picker.cameraDevice = .front
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        headerImage.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

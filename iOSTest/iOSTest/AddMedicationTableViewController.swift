@@ -10,6 +10,14 @@ import UIKit
 
 class AddMedicationTableViewController: UITableViewController {
 
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var saturdayButton: UIButton!
+    @IBOutlet weak var fridayButton: UIButton!
+    @IBOutlet weak var thursdayButton: UIButton!
+    @IBOutlet weak var wednesdayButton: UIButton!
+    @IBOutlet weak var tuesdayButton: UIButton!
+    @IBOutlet weak var mondayButton: UIButton!
+    @IBOutlet weak var sundayButton: UIButton!
     @IBOutlet weak var endRepeatCell: UITableViewCell!
     @IBOutlet weak var repeatCell: UITableViewCell!
     @IBOutlet weak var startDateCell: UITableViewCell!
@@ -43,6 +51,19 @@ class AddMedicationTableViewController: UITableViewController {
     }
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
+        var days = [DateOptions]()
+        if sundayButton.isSelected { days.append(.sunday) }
+        if mondayButton.isSelected { days.append(.monday) }
+        if tuesdayButton.isSelected { days.append(.tuesday) }
+        if wednesdayButton.isSelected { days.append(.wednesday) }
+        if thursdayButton.isSelected { days.append(.thursday) }
+        if fridayButton.isSelected { days.append(.friday) }
+        if saturdayButton.isSelected { days.append(.saturday) }
+        if days.isEmpty {
+            endDate = Date()
+        }
+        let medication = Medication(name: titleField.text!, time: startDatePicker.date, endDate: endDate, days: days)
+        ScheduleData.shared.add(medication: medication)
         dismiss(animated: true, completion: nil)
     }
     
@@ -70,6 +91,7 @@ class AddMedicationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        titleField.resignFirstResponder()
         if indexPath.section == 1 && indexPath.row == 0 {
             if startDateCellHeight == 0 {
                 cell.detailTextLabel?.textColor = UIColor.pillBlue

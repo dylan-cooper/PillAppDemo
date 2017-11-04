@@ -31,6 +31,9 @@
 		A570D5FD1F9D6233005DBCF6 /* AccountAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */; };
 		A570D6011F9E4D55005DBCF6 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570D6001F9E4D55005DBCF6 /* UITextField+DoneButton.swift */; };
 		A5CC3C281FAACCCC00E449F4 /* UIColor+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */; };
+		A5D884E51FAD3EF2009699C7 /* ScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884E41FAD3EF2009699C7 /* ScheduleData.swift */; };
+		A5D884E71FAD3F8C009699C7 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884E61FAD3F8C009699C7 /* Medication.swift */; };
+		A5D884ED1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884EC1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAccessViewController.swift; sourceTree = "<group>"; };
 		A570D6001F9E4D55005DBCF6 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Defaults.swift"; sourceTree = "<group>"; };
+		A5D884E41FAD3EF2009699C7 /* ScheduleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleData.swift; sourceTree = "<group>"; };
+		A5D884E61FAD3F8C009699C7 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		A5D884EC1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMedicationItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,8 @@
 				A570D5FC1F9D6233005DBCF6 /* AccountAccessViewController.swift */,
 				18B6210A1F9EAB3A00DA7627 /* ScheduleViewController.swift */,
 				A5577AA41FABCBE300E75938 /* ScheduleContainerViewController.swift */,
+				A5D884E61FAD3F8C009699C7 /* Medication.swift */,
+				A5D884E41FAD3EF2009699C7 /* ScheduleData.swift */,
 				A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */,
 				A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */,
 				18DF990E1FA784A300FAC28F /* AddMedicationTableViewController.swift */,
@@ -145,6 +153,7 @@
 				A5577A9E1FAADBB900E75938 /* ProfileTableViewController.swift */,
 				18DF99121FA8D08C00FAC28F /* MedicationEndRepeatTableViewController.swift */,
 				A570D6001F9E4D55005DBCF6 /* UITextField+DoneButton.swift */,
+				A5D884EC1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift */,
 				A5117DF61F91C5E90002A8DB /* XibView.swift */,
 				A5117DF81F91C7620002A8DB /* ReusableView.xib */,
 				A5117DFA1F91C8920002A8DB /* ReusableView.swift */,
@@ -323,11 +332,14 @@
 				A5117DF71F91C5E90002A8DB /* XibView.swift in Sources */,
 				18DF99131FA8D08C00FAC28F /* MedicationEndRepeatTableViewController.swift in Sources */,
 				A5577A9F1FAADBB900E75938 /* ProfileTableViewController.swift in Sources */,
+				A5D884E51FAD3EF2009699C7 /* ScheduleData.swift in Sources */,
 				A570D5FB1F9D5B72005DBCF6 /* UIView+Corners.swift in Sources */,
 				A5577AA31FABBA0000E75938 /* LanguageSettingsTableViewController.swift in Sources */,
 				A5117DC91F91C5740002A8DB /* AppDelegate.swift in Sources */,
 				A5117DFB1F91C8920002A8DB /* ReusableView.swift in Sources */,
+				A5D884ED1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift in Sources */,
 				18B621091F9E6FAC00DA7627 /* UnderlinedTextField.swift in Sources */,
+				A5D884E71FAD3F8C009699C7 /* Medication.swift in Sources */,
 				A5577AA51FABCBE300E75938 /* ScheduleContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

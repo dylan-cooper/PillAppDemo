@@ -19,6 +19,13 @@ class ScheduleContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        let split = formatter.string(from: currentDate).split(separator: ",")
+        navigationItem.title = String(split[0]) + "," + String(split[1])
+        
         scheduleChild = childViewControllers[0] as! ScheduleViewController
         scheduleListChild = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "ScheduleListViewController") as! UITableViewController
     }
@@ -53,6 +60,7 @@ class ScheduleContainerViewController: UIViewController {
             childView.alpha = 1
         }
         currentView = "List"
+        scheduleListChild.didMove(toParentViewController: self)
     }
     
     private func removeListViewController() {
