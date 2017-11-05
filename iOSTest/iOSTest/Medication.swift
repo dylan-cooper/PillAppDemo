@@ -14,9 +14,14 @@ struct Medication: Equatable, Codable {
     }
     
     var name:String
+    var type: ReminderType
     var time:Date
     var endDate:Date?
     var days:[DateOptions]
+}
+
+enum ReminderType: Int, Codable {
+    case medication, meeting, event
 }
 
 struct DateOptions: OptionSet, Codable {

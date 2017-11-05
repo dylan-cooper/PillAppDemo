@@ -11,6 +11,7 @@ import UIKit
 class AddMedicationTableViewController: UITableViewController {
 
     @IBOutlet weak var titleField: UITextField!
+    
     @IBOutlet weak var saturdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var thursdayButton: UIButton!
@@ -18,10 +19,22 @@ class AddMedicationTableViewController: UITableViewController {
     @IBOutlet weak var tuesdayButton: UIButton!
     @IBOutlet weak var mondayButton: UIButton!
     @IBOutlet weak var sundayButton: UIButton!
+    
+    
     @IBOutlet weak var endRepeatCell: UITableViewCell!
     @IBOutlet weak var repeatCell: UITableViewCell!
     @IBOutlet weak var startDateCell: UITableViewCell!
+    
+    @IBOutlet weak var medicationReminderCell: UITableViewCell!
+    
+    @IBOutlet weak var meetingReminderCell: UITableViewCell!
+    
     @IBOutlet weak var startDatePicker: UIDatePicker!
+    
+    @IBOutlet weak var eventReminderCell: UITableViewCell!
+    
+    @IBOutlet weak var earlyReminderCell: UITableViewCell!
+    
     var startDateCellHeight:CGFloat = 0
     var endRepeatCellHeight:CGFloat = 0
     
@@ -68,12 +81,25 @@ class AddMedicationTableViewController: UITableViewController {
         if fridayButton.isSelected { days.append(.friday) }
         if saturdayButton.isSelected { days.append(.saturday) }
         if days.isEmpty {
-            endDate = Date()
+            endDate = startDatePicker.date
             let dayOfWeekComponent = Calendar.current.component(.weekday, from: endDate!) - 1
             let currentDayOfWeek = DateOptions(rawValue: 1 << dayOfWeekComponent)
             days.append(currentDayOfWeek)
         }
-        let medication = Medication(name: titleField.text!, time: startDatePicker.date, endDate: endDate, days: days)
+        var reminderType:ReminderType!
+        if eventReminderCell.accessoryType == .checkmark {
+            reminderType = .event
+        } else if medicationReminderCell.accessoryType == .checkmark {
+            reminderType = .medication
+        } else if meetingReminderCell.accessoryType == .checkmark {
+            reminderType = .meeting
+        }
+        let medication = Medication(name: titleField.text!,
+                                    type: reminderType,
+                                    time: startDatePicker.date,
+                                    endDate: endDate,
+                                    days: days)
+        
         ScheduleData.shared.add(medication: medication)
         dismiss(animated: true, completion: nil)
     }
@@ -103,7 +129,7 @@ class AddMedicationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         titleField.resignFirstResponder()
-        if indexPath.section == 1 && indexPath.row == 0 {
+        if cell === startDateCell {
             if startDateCellHeight == 0 {
                 cell.detailTextLabel?.textColor = UIColor.pillBlue
                 startDateCellHeight = 200
@@ -114,6 +140,23 @@ class AddMedicationTableViewController: UITableViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
         }
+        
+        if cell === medicationReminderCell {
+            cell.accessoryType = .checkmark
+            meetingReminderCell.accessoryType = .none
+            eventReminderCell.accessoryType = .none
+        } else if cell === meetingReminderCell {
+            cell.accessoryType = .checkmark
+            medicationReminderCell.accessoryType = .none
+            eventReminderCell.accessoryType = .none
+        } else if cell === eventReminderCell {
+            cell.accessoryType = .checkmark
+            medicationReminderCell.accessoryType = .none
+            meetingReminderCell.accessoryType = .none
+        } else if cell === earlyReminderCell {
+            earlyReminderCell.accessoryType = earlyReminderCell.accessoryType == .none ? .checkmark : .none
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

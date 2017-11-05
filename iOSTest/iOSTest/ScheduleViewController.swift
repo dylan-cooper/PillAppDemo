@@ -42,12 +42,45 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ScheduleData.shared.register(observer: self)
+        addMedicationsToSchedule()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil {
+            ScheduleData.shared.remove(observer: self)
+        }
+    }
+
+    
+    deinit {
+        print("Goodbye schedule")
+        for child in childViewControllers {
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+    }
+    
+    func medicationsDidUpdate() {
+        for child in childViewControllers {
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+        addMedicationsToSchedule()
+    }
+    
+    private func addMedicationsToSchedule() {
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = .full
         let day = formatter.string(from: currentDate).split(separator: ",")[0]
         var dayOption = DateOptions.monday
-        
         if (day == "Tuesday") {
             dayOption = DateOptions.tuesday
         } else if (day == "Wednesday") {
@@ -61,10 +94,9 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         } else if (day == "Sunday") {
             dayOption = DateOptions.sunday
         }
-        ScheduleData.shared.register(observer: self)
         for med in ScheduleData.shared.items {
             if let end = med.endDate {
-                if Calendar.current.compare(end, to: Date(), toGranularity: .day) == .orderedDescending {
+                if Calendar.current.compare(end, to: Date(), toGranularity: .day) == .orderedAscending {
                     continue
                 }
             }
@@ -72,14 +104,6 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
                 addMedicationView(for: med)
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func didAddMedication(_ medication: Medication) {
-        addMedicationView(for: medication)
     }
     
     private func addMedicationView(for medication:Medication) {
@@ -101,10 +125,25 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         medicationVC.nameString = medication.name
         medicationVC.timeString = time
         let separator = getSeparator(for: numericHour, period: String(period))
-        let offset:CGFloat = numericMinutes < 30 ? 0 : 24
+        let offset:CGFloat = numericMinutes < 30 ? 0 : 27
         
         addChildViewController(medicationVC)
         let medicationView = medicationVC.view!
+        
+        if medication.type == .meeting {
+            medicationView.backgroundColor = UIColor.pillGreenLowAlpha
+            medicationVC.borderView.backgroundColor = UIColor.pillGreen
+            medicationVC.name.textColor = UIColor.pillGreen
+            medicationVC.time.textColor = UIColor.pillGreen
+        }
+        
+        if medication.type == .event {
+            medicationView.backgroundColor = UIColor.pillRedLowAlpha
+            medicationVC.borderView.backgroundColor = UIColor.pillRed
+            medicationVC.name.textColor = UIColor.pillRed
+            medicationVC.time.textColor = UIColor.pillRed
+        }
+        
         medicationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(medicationView)
         medicationView.widthAnchor.constraint(equalTo: separator.widthAnchor).isActive = true
@@ -143,10 +182,6 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         default:
             return twelveAMBar2
         }
-    }
-    
-    func didRemoveMedication(_ medication: Medication) {
-        
     }
 
     @IBAction func unwindToSchedule(_ sender: UIStoryboardSegue) {

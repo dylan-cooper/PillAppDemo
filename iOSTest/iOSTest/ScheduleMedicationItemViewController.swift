@@ -13,6 +13,7 @@ class ScheduleMedicationItemViewController: UIViewController {
     var nameString:String!
     var timeString:String!
     
+    @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var time: UILabel!
     

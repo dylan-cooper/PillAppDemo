@@ -24,7 +24,8 @@ class SettingsTableViewController: UITableViewController {
             presentSignOutDialog()
         }
         if cell === clearDataCell {
-            UserDefaults.standard.set(nil, forKey: "medication")
+            UserDefaults.standard.set(nil, forKey: "Medication")
+            ScheduleData.shared.items = [Medication]()
         }
     }
     

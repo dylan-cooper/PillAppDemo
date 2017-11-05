@@ -11,4 +11,5 @@ import UIKit
 class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var separator: UIView!
 }

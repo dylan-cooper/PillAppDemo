@@ -10,7 +10,7 @@ import UIKit
 
 class ScheduleData {
     var items = [Medication]()
-    private weak var observer:MedicationUpdateObserver?
+    private var observers = [MedicationUpdateObserver]()
     
     static let shared = ScheduleData()
     
@@ -23,12 +23,18 @@ class ScheduleData {
     }
     
     func register(observer: MedicationUpdateObserver) {
-        self.observer = observer
+        observers.append(observer)
+    }
+    
+    func remove(observer: MedicationUpdateObserver) {
+        observers = observers.filter { return $0 !== observer }
     }
     
     func add(medication: Medication) {
         items.append(medication)
-        observer?.didAddMedication(medication)
+        for observer in observers {
+            observer.medicationsDidUpdate()
+        }
         guard let data = try? JSONEncoder().encode(items) else { return }
         UserDefaults.standard.set(data, forKey: "Medication")
     }
@@ -36,7 +42,9 @@ class ScheduleData {
     func remove(medication: Medication) {
         if let index = items.index(of: medication) {
             items.remove(at: index)
-            observer?.didRemoveMedication(medication)
+            for observer in observers {
+                observer.medicationsDidUpdate()
+            }
             guard let data = try? JSONEncoder().encode(items) else { return }
             UserDefaults.standard.set(data, forKey: "Medication")
         }
@@ -44,6 +52,5 @@ class ScheduleData {
 }
 
 protocol MedicationUpdateObserver: AnyObject {
-    func didAddMedication(_ medication: Medication)
-    func didRemoveMedication(_ medication: Medication)
+    func medicationsDidUpdate()
 }

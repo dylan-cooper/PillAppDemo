@@ -27,7 +27,20 @@ class ScheduleContainerViewController: UIViewController {
         navigationItem.title = String(split[0]) + "," + String(split[1])
         
         scheduleChild = childViewControllers[0] as! ScheduleViewController
-        scheduleListChild = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
+    }
+    
+    deinit {
+        print("Goodbye schedule container.")
+        if scheduleChild != nil {
+            self.scheduleChild.willMove(toParentViewController: nil)
+            self.scheduleChild.view.removeFromSuperview()
+            self.scheduleChild.removeFromParentViewController()
+        }
+        if scheduleListChild != nil {
+            self.scheduleListChild.willMove(toParentViewController: nil)
+            self.scheduleListChild.view.removeFromSuperview()
+            self.scheduleListChild.removeFromParentViewController()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +60,7 @@ class ScheduleContainerViewController: UIViewController {
     }
     
     private func addListViewController() {
+        scheduleListChild = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
         addChildViewController(scheduleListChild)
         let childView = scheduleListChild.view!
         childView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,18 +85,7 @@ class ScheduleContainerViewController: UIViewController {
             self.scheduleListChild.view.removeFromSuperview()
             self.scheduleListChild.removeFromParentViewController()
             self.currentView = "Day"
+            self.scheduleListChild = nil
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
