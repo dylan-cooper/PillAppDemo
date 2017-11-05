@@ -40,12 +40,21 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
     private var originalDistance:CGFloat = 32
     @IBOutlet weak var contentView: UIView!
     
+    var firstAppearance = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ScheduleData.shared.register(observer: self)
         addMedicationsToSchedule()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if firstAppearance {
+            firstAppearance = false
+            let hour = CGFloat(Calendar.current.component(.hour, from: Date()))
+            scrollView.contentOffset = CGPoint(x: 0, y: min(scrollView.contentSize.height - scrollView.bounds.height - scrollView.contentInset.bottom, hour*36))
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -56,7 +65,6 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         }
     }
 
-    
     deinit {
         print("Goodbye schedule")
         for child in childViewControllers {
