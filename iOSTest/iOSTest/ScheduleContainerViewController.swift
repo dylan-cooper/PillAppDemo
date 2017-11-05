@@ -15,7 +15,7 @@ class ScheduleContainerViewController: UIViewController {
     var currentView = "Day"
     
     var scheduleChild:ScheduleViewController!
-    var scheduleListChild:UITableViewController!
+    var scheduleListChild:ScheduleTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ScheduleContainerViewController: UIViewController {
         navigationItem.title = String(split[0]) + "," + String(split[1])
         
         scheduleChild = childViewControllers[0] as! ScheduleViewController
-        scheduleListChild = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "ScheduleListViewController") as! UITableViewController
+        scheduleListChild = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     }
 
     override func didReceiveMemoryWarning() {

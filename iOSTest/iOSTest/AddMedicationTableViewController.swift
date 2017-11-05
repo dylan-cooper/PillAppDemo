@@ -25,6 +25,7 @@ class AddMedicationTableViewController: UITableViewController {
     var startDateCellHeight:CGFloat = 0
     var endRepeatCellHeight:CGFloat = 0
     
+    @IBOutlet weak var startDatePickerCell: UITableViewCell!
     @IBOutlet weak var addButton: UIBarButtonItem!
     var endDate:Date? = nil {
         didSet {
@@ -48,6 +49,13 @@ class AddMedicationTableViewController: UITableViewController {
     @IBAction func didTapRepeat(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         sender.backgroundColor = sender.isSelected ? UIColor.pillBlue : UIColor.clear
+        if sundayButton.isSelected || mondayButton.isSelected || tuesdayButton.isSelected || wednesdayButton.isSelected || thursdayButton.isSelected || fridayButton.isSelected || saturdayButton.isSelected {
+            endRepeatCellHeight = 44
+        } else {
+            endRepeatCellHeight = 0
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
@@ -61,6 +69,9 @@ class AddMedicationTableViewController: UITableViewController {
         if saturdayButton.isSelected { days.append(.saturday) }
         if days.isEmpty {
             endDate = Date()
+            let dayOfWeekComponent = Calendar.current.component(.weekday, from: endDate!) - 1
+            let currentDayOfWeek = DateOptions(rawValue: 1 << dayOfWeekComponent)
+            days.append(currentDayOfWeek)
         }
         let medication = Medication(name: titleField.text!, time: startDatePicker.date, endDate: endDate, days: days)
         ScheduleData.shared.add(medication: medication)
@@ -107,10 +118,12 @@ class AddMedicationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 && indexPath.row == 1 {
+        if indexPath.row == 1 && indexPath.section == 1 {
             return startDateCellHeight
-        } else {
-            return UITableViewAutomaticDimension
         }
+        if indexPath.row == 3 && indexPath.section == 1 {
+            return endRepeatCellHeight
+        }
+        return UITableViewAutomaticDimension
     }
 }

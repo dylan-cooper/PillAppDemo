@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var clearDataCell: UITableViewCell!
     @IBOutlet weak var languageCell: UITableViewCell!
     @IBOutlet weak var signOutCell: UITableViewCell!
     override func viewDidLoad() {
@@ -21,6 +22,9 @@ class SettingsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         if cell === signOutCell {
             presentSignOutDialog()
+        }
+        if cell === clearDataCell {
+            UserDefaults.standard.set(nil, forKey: "medication")
         }
     }
     
