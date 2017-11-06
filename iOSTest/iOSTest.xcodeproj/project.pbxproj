@@ -40,6 +40,7 @@
 		A5EC79341FAF8FAD00F815AE /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79331FAF8FAD00F815AE /* ContactsTableViewController.swift */; };
 		A5EC79361FAFDBFE00F815AE /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79351FAFDBFE00F815AE /* AddContactTableViewController.swift */; };
 		A5EC79381FAFE03700F815AE /* ContactProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79371FAFE03700F815AE /* ContactProfileTableViewController.swift */; };
+		A5EC793B1FAFED1400F815AE /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EC79391FAFED1400F815AE /* Friends.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		A5EC79331FAF8FAD00F815AE /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		A5EC79351FAFDBFE00F815AE /* AddContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
 		A5EC79371FAFE03700F815AE /* ContactProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProfileTableViewController.swift; sourceTree = "<group>"; };
+		A5EC793A1FAFED1400F815AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iOSTest/iOSTest/Base.lproj/Friends.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				A5117DCC1F91C5740002A8DB /* Main.storyboard */,
 				A570D5F71F9D5AE5005DBCF6 /* TabController.storyboard */,
 				A5577A9B1FAADA2900E75938 /* Schedule.storyboard */,
+				A5EC79391FAFED1400F815AE /* Friends.storyboard */,
 				A5117DD11F91C5740002A8DB /* LaunchScreen.storyboard */,
 				A5117DD41F91C5740002A8DB /* Info.plist */,
 			);
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5117DD31F91C5740002A8DB /* LaunchScreen.storyboard in Resources */,
+				A5EC793B1FAFED1400F815AE /* Friends.storyboard in Resources */,
 				A570D5F91F9D5AE5005DBCF6 /* TabController.storyboard in Resources */,
 				A5117DD01F91C5740002A8DB /* Assets.xcassets in Resources */,
 				A5117DCE1F91C5740002A8DB /* Main.storyboard in Resources */,
@@ -430,6 +434,14 @@
 				A570D5F81F9D5AE5005DBCF6 /* Base */,
 			);
 			name = TabController.storyboard;
+			sourceTree = "<group>";
+		};
+		A5EC79391FAFED1400F815AE /* Friends.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5EC793A1FAFED1400F815AE /* Base */,
+			);
+			name = Friends.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
