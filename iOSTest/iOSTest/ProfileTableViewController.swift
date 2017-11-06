@@ -22,6 +22,7 @@ class ProfileTableViewController: UITableViewController, UIImagePickerController
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         imageContainer.layer.cornerRadius = imageContainer.frame.width/2
         imageContainer.layer.masksToBounds = true
     }

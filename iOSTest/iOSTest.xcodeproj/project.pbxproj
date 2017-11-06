@@ -36,6 +36,10 @@
 		A5D884ED1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884EC1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift */; };
 		A5D884EF1FAD9BBD009699C7 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884EE1FAD9BBD009699C7 /* ScheduleTableViewController.swift */; };
 		A5D884F11FAE8EC9009699C7 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D884F01FAE8EC9009699C7 /* ScheduleTableViewCell.swift */; };
+		A5EC79321FAF8CF300F815AE /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79311FAF8CF300F815AE /* Friend.swift */; };
+		A5EC79341FAF8FAD00F815AE /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79331FAF8FAD00F815AE /* ContactsTableViewController.swift */; };
+		A5EC79361FAFDBFE00F815AE /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79351FAFDBFE00F815AE /* AddContactTableViewController.swift */; };
+		A5EC79381FAFE03700F815AE /* ContactProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC79371FAFE03700F815AE /* ContactProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		A5D884EC1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMedicationItemViewController.swift; sourceTree = "<group>"; };
 		A5D884EE1FAD9BBD009699C7 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		A5D884F01FAE8EC9009699C7 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		A5EC79311FAF8CF300F815AE /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		A5EC79331FAF8FAD00F815AE /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		A5EC79351FAFDBFE00F815AE /* AddContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
+		A5EC79371FAFE03700F815AE /* ContactProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,10 @@
 				A5D884EE1FAD9BBD009699C7 /* ScheduleTableViewController.swift */,
 				A5577AA41FABCBE300E75938 /* ScheduleContainerViewController.swift */,
 				A5D884E61FAD3F8C009699C7 /* Medication.swift */,
+				A5EC79311FAF8CF300F815AE /* Friend.swift */,
+				A5EC79331FAF8FAD00F815AE /* ContactsTableViewController.swift */,
+				A5EC79371FAFE03700F815AE /* ContactProfileTableViewController.swift */,
+				A5EC79351FAFDBFE00F815AE /* AddContactTableViewController.swift */,
 				A5D884E41FAD3EF2009699C7 /* ScheduleData.swift */,
 				A570D5FA1F9D5B72005DBCF6 /* UIView+Corners.swift */,
 				A5CC3C271FAACCCC00E449F4 /* UIColor+Defaults.swift */,
@@ -330,8 +342,10 @@
 			files = (
 				A570D6011F9E4D55005DBCF6 /* UITextField+DoneButton.swift in Sources */,
 				A5CC3C281FAACCCC00E449F4 /* UIColor+Defaults.swift in Sources */,
+				A5EC79361FAFDBFE00F815AE /* AddContactTableViewController.swift in Sources */,
 				A5117DCB1F91C5740002A8DB /* LoginViewController.swift in Sources */,
 				18DF990F1FA784A300FAC28F /* AddMedicationTableViewController.swift in Sources */,
+				A5EC79341FAF8FAD00F815AE /* ContactsTableViewController.swift in Sources */,
 				A570D5FD1F9D6233005DBCF6 /* AccountAccessViewController.swift in Sources */,
 				18B6210B1F9EAB3A00DA7627 /* ScheduleViewController.swift in Sources */,
 				A5577AA11FAB9F1900E75938 /* SettingsTableViewController.swift in Sources */,
@@ -345,10 +359,12 @@
 				A5117DC91F91C5740002A8DB /* AppDelegate.swift in Sources */,
 				A5117DFB1F91C8920002A8DB /* ReusableView.swift in Sources */,
 				A5D884ED1FAD7136009699C7 /* ScheduleMedicationItemViewController.swift in Sources */,
+				A5EC79381FAFE03700F815AE /* ContactProfileTableViewController.swift in Sources */,
 				A5D884EF1FAD9BBD009699C7 /* ScheduleTableViewController.swift in Sources */,
 				18B621091F9E6FAC00DA7627 /* UnderlinedTextField.swift in Sources */,
 				A5D884E71FAD3F8C009699C7 /* Medication.swift in Sources */,
 				A5577AA51FABCBE300E75938 /* ScheduleContainerViewController.swift in Sources */,
+				A5EC79321FAF8CF300F815AE /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -774,16 +774,19 @@
                         <sections>
                             <tableViewSection id="HwA-Rs-RpE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kjB-PE-Yh0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="44" id="kjB-PE-Yh0">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kjB-PE-Yh0" id="GCu-Hu-2oy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLv-zC-Xsn">
+                                                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLv-zC-Xsn">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <color key="tintColor" red="0.0" green="0.60392156860000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43.5" id="a7F-nO-ykp"/>
+                                                    </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -793,10 +796,9 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="nLv-zC-Xsn" secondAttribute="bottom" id="bMR-b6-hxn"/>
-                                                <constraint firstItem="nLv-zC-Xsn" firstAttribute="top" secondItem="GCu-Hu-2oy" secondAttribute="top" id="j8b-Sf-FlF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="nLv-zC-Xsn" secondAttribute="trailing" id="lKe-d7-WSb"/>
-                                                <constraint firstItem="nLv-zC-Xsn" firstAttribute="leading" secondItem="GCu-Hu-2oy" secondAttribute="leadingMargin" id="yLd-F8-Ffw"/>
+                                                <constraint firstItem="nLv-zC-Xsn" firstAttribute="leading" secondItem="GCu-Hu-2oy" secondAttribute="leadingMargin" id="BW3-Pt-48b"/>
+                                                <constraint firstItem="nLv-zC-Xsn" firstAttribute="centerY" secondItem="GCu-Hu-2oy" secondAttribute="centerY" id="HnW-he-u9U"/>
+                                                <constraint firstItem="nLv-zC-Xsn" firstAttribute="trailing" secondItem="GCu-Hu-2oy" secondAttribute="trailingMargin" id="kiq-db-rwm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
