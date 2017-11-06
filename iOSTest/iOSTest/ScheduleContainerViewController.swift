@@ -81,11 +81,13 @@ class ScheduleContainerViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.scheduleListChild.view.alpha = 0
         }) { (finished) in
-            self.scheduleListChild.willMove(toParentViewController: nil)
-            self.scheduleListChild.view.removeFromSuperview()
-            self.scheduleListChild.removeFromParentViewController()
-            self.currentView = "Day"
-            self.scheduleListChild = nil
+            if self.scheduleListChild != nil {
+                self.scheduleListChild.willMove(toParentViewController: nil)
+                self.scheduleListChild.view.removeFromSuperview()
+                self.scheduleListChild.removeFromParentViewController()
+                self.currentView = "Day"
+                self.scheduleListChild = nil
+            }
         }
     }
 }
