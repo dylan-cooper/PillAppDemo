@@ -41,6 +41,7 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
     @IBOutlet weak var contentView: UIView!
     
     var firstAppearance = true
+    var usedSeparators = [UIView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +85,7 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
     }
     
     private func addMedicationsToSchedule() {
+        usedSeparators.removeAll()
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = .full
@@ -102,6 +104,24 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         } else if (day == "Sunday") {
             dayOption = DateOptions.sunday
         }
+        
+        let meds = ScheduleData.shared.items.sorted { (first, second) -> Bool in
+            let firstHour = Calendar.current.component(.hour, from: first.time)
+            let secondHour = Calendar.current.component(.hour, from: second.time)
+            if firstHour < secondHour {
+                return true
+            } else if firstHour > secondHour {
+                return false
+            } else {
+                let firstMin = Calendar.current.component(.minute, from: first.time)
+                let secondMin = Calendar.current.component(.minute, from: second.time)
+                if firstMin > secondMin {
+                    return false
+                }
+                return true
+            }
+        }
+        
         for med in ScheduleData.shared.items {
             if let end = med.endDate {
                 if Calendar.current.compare(end, to: Date(), toGranularity: .day) == .orderedAscending {
@@ -159,6 +179,9 @@ class ScheduleViewController: UIViewController, MedicationUpdateObserver {
         medicationView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: offset).isActive = true
         medicationView.trailingAnchor.constraint(equalTo: separator.trailingAnchor).isActive = true
         medicationVC.didMove(toParentViewController: self)
+        let m = CGFloat(usedSeparators.filter({$0 === separator}).count)
+        medicationView.transform = CGAffineTransform(translationX: 0, y: m*27)
+        usedSeparators.append(separator)
     }
     
     private func getSeparator(for hour:Int, period:String) -> UIView {
