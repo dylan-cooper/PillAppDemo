@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
-    @IBOutlet weak var clearDataCell: UITableViewCell!
     @IBOutlet weak var languageCell: UITableViewCell!
     @IBOutlet weak var signOutCell: UITableViewCell!
     override func viewDidLoad() {
@@ -23,14 +22,19 @@ class SettingsTableViewController: UITableViewController {
         if cell === signOutCell {
             presentSignOutDialog()
         }
-        if cell === clearDataCell {
-            UserDefaults.standard.set(nil, forKey: "Medication")
-            ScheduleData.shared.items = [Medication]()
-        }
     }
     
     deinit {
         print("Goodbye to settings")
+    }
+    
+    @IBAction func didSecretLongPress(_ sender: UILongPressGestureRecognizer) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        UserDefaults.standard.set(nil, forKey: "Medication")
+        ScheduleData.shared.reset()
+        generator.impactOccurred()
+        signOut()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

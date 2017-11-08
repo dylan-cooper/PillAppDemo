@@ -371,30 +371,10 @@
                                                 <constraint firstItem="ZRG-Wo-ehG" firstAttribute="centerX" secondItem="IAA-T1-Mxg" secondAttribute="centerX" id="buD-mm-XCc"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="79D-bs-1R0">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Hz-he-aes">
-                                        <rect key="frame" x="0.0" y="383.5" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Hz-he-aes" id="JRR-sz-xnZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug - Clear Saved Calendar Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYO-tQ-OHu">
-                                                    <rect key="frame" x="38.5" y="12.5" width="244" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LYO-tQ-OHu" firstAttribute="centerX" secondItem="JRR-sz-xnZ" secondAttribute="centerX" id="MIY-Ac-Qtk"/>
-                                                <constraint firstItem="LYO-tQ-OHu" firstAttribute="centerY" secondItem="JRR-sz-xnZ" secondAttribute="centerY" id="hiJ-Pw-zo4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mhd-n3-sxW" appends="YES" id="7su-PU-q0l"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -406,12 +386,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="nbw-vJ-tDr"/>
                     <connections>
-                        <outlet property="clearDataCell" destination="6Hz-he-aes" id="QxC-ul-HNx"/>
                         <outlet property="languageCell" destination="XvU-3u-DoO" id="S0A-G3-cHz"/>
                         <outlet property="signOutCell" destination="LrH-Im-jb6" id="nih-0d-2AS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HY-uE-b2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="3" id="mhd-n3-sxW">
+                    <connections>
+                        <action selector="didSecretLongPress:" destination="LMc-aF-Wcl" id="f0D-z7-tF4"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3727.5" y="1597.1830985915494"/>
         </scene>

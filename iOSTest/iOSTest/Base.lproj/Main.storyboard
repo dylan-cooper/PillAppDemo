@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,16 +20,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unable to log in. Please check your user name and password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZU-Ld-Fhm">
-                                <rect key="frame" x="32" y="322.5" width="256" height="41"/>
+                                <rect key="frame" x="32" y="335.5" width="256" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.79960542947507751" green="0.012909396156486012" blue="0.020834123426495002" alpha="0.73405393835616439" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-aO-gsG">
-                                <rect key="frame" x="32" y="224" width="256" height="140"/>
+                                <rect key="frame" x="32" y="64" width="256" height="313"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applogo" translatesAutoresizingMaskIntoConstraints="NO" id="NP5-cy-EIe">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="149"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NP5-cy-EIe" secondAttribute="height" multiplier="43:25" id="FVd-eB-27j"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-5P-xIP">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="86"/>
+                                        <rect key="frame" x="0.0" y="173" width="256" height="86"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nTq-My-PcM">
                                                 <rect key="frame" x="0.0" y="0.0" width="256" height="39"/>
@@ -107,7 +114,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-nn-Ed4">
-                                        <rect key="frame" x="0.0" y="110" width="256" height="30"/>
+                                        <rect key="frame" x="0.0" y="283" width="256" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.60392156862745094" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,12 +130,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLC And Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-qY-SG7">
-                                <rect key="frame" x="34.5" y="122" width="251.5" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -136,10 +137,8 @@
                             <constraint firstItem="iCh-aO-gsG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="HnX-80-khD"/>
                             <constraint firstItem="YZU-Ld-Fhm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sgn-NO-lKg"/>
                             <constraint firstItem="YZU-Ld-Fhm" firstAttribute="bottom" secondItem="iCh-aO-gsG" secondAttribute="bottom" id="W7K-H4-luZ"/>
-                            <constraint firstItem="iCh-aO-gsG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WKr-kh-mgx"/>
+                            <constraint firstItem="iCh-aO-gsG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.75" id="WKr-kh-mgx"/>
                             <constraint firstItem="YZU-Ld-Fhm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="cF6-ev-FWj"/>
-                            <constraint firstItem="geQ-qY-SG7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gFj-xl-7Nv"/>
-                            <constraint firstItem="geQ-qY-SG7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.5" id="xMY-6i-qhl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -445,4 +444,7 @@
             <point key="canvasLocation" x="20.800000000000001" y="33.990147783251231"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="applogo" width="215" height="125"/>
+    </resources>
 </document>

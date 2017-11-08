@@ -97,6 +97,8 @@ class LoginViewController: UIViewController {
             UIView.transition(from: view, to: viewController.view, duration: 0.5, options: .transitionCrossDissolve, completion: nil)
             window.rootViewController = viewController
         } else {
+            userNameField.resignFirstResponder()
+            passwordField.resignFirstResponder()
             UIView.animate(withDuration: 0.5) {
                 self.loginErrorMessage.alpha = 1
                 self.loginErrorMessage.transform = CGAffineTransform(translationX: 0, y: self.passwordField.frame.maxY + 24)

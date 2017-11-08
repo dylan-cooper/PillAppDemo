@@ -79,18 +79,24 @@ class ContactsTableViewController: UITableViewController {
             performSegue(withIdentifier: "showFriendProfile", sender: self)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 88
+        }
+        return 44
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
         if indexPath.section == 0 {
-            cell.textLabel?.text = friends[indexPath.row].name
-            cell.accessoryType = .disclosureIndicator
-            cell.selectionStyle = .default
-        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! ContactTableViewCell
+            cell.nameLabel.text = friends[indexPath.row].name
+            cell.profileImage.image = UIImage(imageLiteralResourceName: String(friends[indexPath.row].name.split(separator: " ")[0]))
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pendingFriendCell", for: indexPath)
             cell.textLabel?.text = pendingFriends[indexPath.row]
-            cell.accessoryType = .none
-            cell.selectionStyle = .none
+            return cell
         }
-        return cell
     }
 }
